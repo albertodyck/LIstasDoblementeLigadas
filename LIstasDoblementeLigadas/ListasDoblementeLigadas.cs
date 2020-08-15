@@ -33,6 +33,33 @@ namespace LIstasDoblementeLigadas
             return datos;
         }
 
+        public void VaciarLista()
+        {
+            nodoInicial.Siguiente = null;
+        }
+
+        public bool ValidaVacia()
+        {
+            return (nodoInicial.Siguiente == null);
+        }
+
+        public void AgregarNodo(string dato)
+        {
+            nodoActual = nodoInicial;
+
+            while (nodoActual.Siguiente != null)
+            {
+                nodoActual = nodoActual.Siguiente;
+            }
+
+            Nodo nodoNuevo = new Nodo();
+            nodoNuevo.Dato = dato;
+
+            nodoNuevo.Siguiente = null;
+            nodoNuevo.Anterior = nodoActual;
+            nodoActual.Siguiente = nodoNuevo;
+        }
+
     }
 
 }
