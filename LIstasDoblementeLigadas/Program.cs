@@ -6,7 +6,10 @@ namespace LIstasDoblementeLigadas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ListasDoblementeLigadas lista = new ListasDoblementeLigadas();
+            Console.WriteLine(lista.RecorrerLista());
+
+
         }
     }
 }
