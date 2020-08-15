@@ -53,6 +53,9 @@ namespace LIstasDoblementeLigadas
                 Console.WriteLine($"Se encontró {nodoAnterior.Dato}");
             }
 
+            Console.WriteLine("----Eliminando un nodo----");
+            lista.BorrarNodo("Dos");
+            Console.WriteLine(lista.RecorrerLista());
 
         }
     }
