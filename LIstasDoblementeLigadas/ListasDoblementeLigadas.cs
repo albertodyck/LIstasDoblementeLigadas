@@ -60,6 +60,19 @@ namespace LIstasDoblementeLigadas
             nodoActual.Siguiente = nodoNuevo;
         }
 
+        public void AgregarNodoInicio(string dato)
+        {
+            nodoActual = nodoInicial;
+
+            Nodo nodoNuevo = new Nodo();
+            nodoNuevo.Dato = dato;
+
+            nodoNuevo.Anterior = nodoInicial;
+            nodoNuevo.Siguiente = nodoInicial.Siguiente;
+            nodoInicial.Siguiente = nodoNuevo;
+            nodoNuevo.Siguiente.Anterior = nodoNuevo;
+        }
+
     }
 
 }

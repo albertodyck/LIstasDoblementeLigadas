@@ -14,6 +14,9 @@ namespace LIstasDoblementeLigadas
             lista.AgregarNodo("Tres");
 
             Console.WriteLine(lista.RecorrerLista());
+
+            lista.AgregarNodoInicio("Cero");
+            Console.WriteLine(lista.RecorrerLista());
         }
     }
 }
