@@ -73,6 +73,74 @@ namespace LIstasDoblementeLigadas
             nodoNuevo.Siguiente.Anterior = nodoNuevo;
         }
 
+        public Nodo Buscar(string dato)
+        {
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            Nodo nodoBusqueda = nodoInicial;
+
+            while (nodoBusqueda.Siguiente != null)
+            {
+                nodoBusqueda = nodoBusqueda.Siguiente;
+
+                if (nodoBusqueda.Dato == dato)
+                {
+                    return nodoBusqueda;
+                }
+            }
+
+            return null;
+        }
+
+        public Nodo BuscarIndice(int indice)
+        {
+            int Indice = -1;
+
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            nodoActual = nodoInicial;
+
+            while (nodoActual.Siguiente != null)
+            {
+                nodoActual = nodoActual.Siguiente;
+                Indice++;
+
+                if (Indice == indice)
+                {
+                    return nodoActual;
+                }
+            }
+
+            return null;
+        }
+
+        public Nodo BuscarAnterior(string dato)
+        {
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            Nodo nodoBusqueda = nodoInicial;
+            while (nodoBusqueda.Siguiente != null)   
+            {
+                nodoBusqueda = nodoBusqueda.Siguiente;
+
+                if (nodoBusqueda.Dato == dato)
+                {
+                    return nodoBusqueda.Anterior;
+                }
+            }
+
+            return null;
+        }
+
     }
 
 }
